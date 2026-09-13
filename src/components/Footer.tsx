@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const SOLUTION_LINKS = [
-  { label: "Business Automation", href: "#services" },
-  { label: "Enterprise AI", href: "#services" },
-  { label: "Cloud & DevOps", href: "#services" },
-  { label: "Compliance Tech", href: "#services" },
+  { label: "Managed Services", href: "#solution-managed-services" },
+  { label: "Cyber Security", href: "#solution-cyber-security" },
+  { label: "Web Development", href: "#solution-web-development" },
+  { label: "Cloud Services", href: "#solution-cloud-services" },
 ];
 
 const COMPANY_LINKS = [

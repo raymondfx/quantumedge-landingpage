@@ -6,15 +6,16 @@ import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { useContactModal } from "./ContactModalProvider";
 
 const SERVICE_LINKS = [
-  { label: "Business Automation & Integration", href: "#service-automation" },
-  { label: "Enterprise AI & Predictive Systems", href: "#service-ai" },
-  { label: "Cloud Infrastructure & DevOps", href: "#service-cloud" },
-  { label: "Regulatory & Compliance Tech", href: "#service-compliance" },
+  { label: "Managed Services", href: "#solution-managed-services" },
+  { label: "IT Consulting & Advisory", href: "#solution-it-consulting" },
+  { label: "Cyber Security", href: "#solution-cyber-security" },
+  { label: "Web Development", href: "#solution-web-development" },
+  { label: "Mobile Development", href: "#solution-mobile-development" },
+  { label: "Cloud Services", href: "#solution-cloud-services" },
 ];
 
 const NAV_LINKS = [
   { label: "Flagship Solutions", href: "#flagship" },
-  { label: "Enterprise AI", href: "#service-ai" },
   { label: "Methodology", href: "#why-us" },
 ];
 
