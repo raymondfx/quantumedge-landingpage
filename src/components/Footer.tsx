@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const SOLUTION_LINKS = [
   { label: "Managed Services", href: "#solution-managed-services" },
@@ -76,12 +77,12 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/40 sm:flex-row">
           <p>&copy; {year} Quantumedge Technologies Limited. All rights reserved.</p>
           <nav className="flex items-center gap-6">
-            <a href="#privacy" className="hover:text-accent-soft transition-colors">
+            <Link href="/privacy" className="hover:text-accent-soft transition-colors">
               Privacy Policy
-            </a>
-            <a href="#terms" className="hover:text-accent-soft transition-colors">
+            </Link>
+            <Link href="/terms" className="hover:text-accent-soft transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
