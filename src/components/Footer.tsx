@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
             <p className="mt-4 max-w-xs text-sm text-white/50">
               Enterprise software engineering, AI automation, and cloud-native
-              solutions for East Africa&rsquo;s growing enterprises.
+              solutions for East Africa&rsquo;s growing businesses.
             </p>
             <p className="mt-4 text-xs text-white/40">Nairobi, Kenya</p>
           </div>
