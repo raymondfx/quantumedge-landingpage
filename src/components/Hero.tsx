@@ -2,10 +2,10 @@ import Image from "next/image";
 import { Star } from "lucide-react";
 
 const METRICS = [
-  { value: "99.99%", unit: "Uptime", label: "SLA Architectures" },
-  { value: "10x", unit: "Faster", label: "LPO & Order Processing" },
-  { value: "eTIMS & ERP", unit: "", label: "Native Compliance" },
-  { value: "24/7", unit: "", label: "AI Workflow Automation" },
+  { value: "10", unit: "Years", label: "Proven Track Record" },
+  { value: "98", unit: "%", label: "Customer Satisfaction" },
+  { value: "30", unit: "Projects", label: "We Have Completed" },
+  { value: "3", unit: "Mins", label: "Average Answer Time" },
 ];
 
 function ReviewBadge() {
@@ -104,7 +104,7 @@ export default function Hero() {
         {/* Trust / metrics strip */}
         <div className="animate-fade-in-up delay-400 mt-16 border-t border-border py-8">
           {/* Desktop: one divided row — review badge + 4 metrics */}
-          <div className="hidden lg:flex lg:items-center lg:divide-x lg:divide-border">
+          <div className="hidden lg:flex lg:items-center lg:justify-between lg:divide-x lg:divide-border">
             <div className="pr-8">
               <ReviewBadge />
             </div>
