@@ -1,4 +1,4 @@
-import { NEEDS, type FormState, type FormErrors } from "@/lib/contactForm";
+import { HELP_OPTIONS, type FormState, type FormErrors } from "@/lib/contactForm";
 
 const inputClasses =
   "mt-2 w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy placeholder:text-slate-400 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
@@ -20,39 +20,39 @@ export default function ContactFormFields({
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor={id("name")} className="block text-sm font-medium text-navy">
-            Name
+          <label htmlFor={id("firstName")} className="block text-sm font-medium text-navy">
+            First name
           </label>
           <input
-            id={id("name")}
+            id={id("firstName")}
             type="text"
-            value={values.name}
-            onChange={(e) => onChange("name", e.target.value)}
+            value={values.firstName}
+            onChange={(e) => onChange("firstName", e.target.value)}
             className={inputClasses}
-            placeholder="Jane Mwangi"
+            placeholder="Jane"
           />
-          {errors.name && <p className="mt-1.5 text-xs text-red-600">{errors.name}</p>}
+          {errors.firstName && <p className="mt-1.5 text-xs text-red-600">{errors.firstName}</p>}
         </div>
 
         <div>
-          <label htmlFor={id("email")} className="block text-sm font-medium text-navy">
-            Corporate Email
+          <label htmlFor={id("lastName")} className="block text-sm font-medium text-navy">
+            Last name
           </label>
           <input
-            id={id("email")}
-            type="email"
-            value={values.email}
-            onChange={(e) => onChange("email", e.target.value)}
+            id={id("lastName")}
+            type="text"
+            value={values.lastName}
+            onChange={(e) => onChange("lastName", e.target.value)}
             className={inputClasses}
-            placeholder="jane@company.com"
+            placeholder="Mwangi"
           />
-          {errors.email && <p className="mt-1.5 text-xs text-red-600">{errors.email}</p>}
+          {errors.lastName && <p className="mt-1.5 text-xs text-red-600">{errors.lastName}</p>}
         </div>
       </div>
 
       <div>
         <label htmlFor={id("company")} className="block text-sm font-medium text-navy">
-          Organization / Company Name
+          Company / Organization
         </label>
         <input
           id={id("company")}
@@ -66,42 +66,72 @@ export default function ContactFormFields({
       </div>
 
       <div>
-        <label htmlFor={id("need")} className="block text-sm font-medium text-navy">
-          Primary Need
+        <label htmlFor={id("companyEmail")} className="block text-sm font-medium text-navy">
+          Company email
         </label>
-        <select
-          id={id("need")}
-          value={values.need}
-          onChange={(e) => onChange("need", e.target.value)}
+        <input
+          id={id("companyEmail")}
+          type="email"
+          value={values.companyEmail}
+          onChange={(e) => onChange("companyEmail", e.target.value)}
           className={inputClasses}
-        >
-          <option value="" disabled>
-            Select a category
-          </option>
-          {NEEDS.map((need) => (
-            <option key={need} value={need}>
-              {need}
-            </option>
-          ))}
-        </select>
-        {errors.need && <p className="mt-1.5 text-xs text-red-600">{errors.need}</p>}
+          placeholder="jane@company.com"
+        />
+        {errors.companyEmail && (
+          <p className="mt-1.5 text-xs text-red-600">{errors.companyEmail}</p>
+        )}
       </div>
 
       <div>
-        <label htmlFor={id("description")} className="block text-sm font-medium text-navy">
-          Project Scope / Description
+        <label htmlFor={id("phone")} className="block text-sm font-medium text-navy">
+          Phone
+        </label>
+        <input
+          id={id("phone")}
+          type="tel"
+          value={values.phone}
+          onChange={(e) => onChange("phone", e.target.value)}
+          className={inputClasses}
+          placeholder="+254 700 000 000"
+        />
+        {errors.phone && <p className="mt-1.5 text-xs text-red-600">{errors.phone}</p>}
+      </div>
+
+      <div>
+        <label htmlFor={id("helpType")} className="block text-sm font-medium text-navy">
+          How Can We Help You?
+        </label>
+        <select
+          id={id("helpType")}
+          value={values.helpType}
+          onChange={(e) => onChange("helpType", e.target.value)}
+          className={inputClasses}
+        >
+          <option value="" disabled>
+            Select Option
+          </option>
+          {HELP_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        {errors.helpType && <p className="mt-1.5 text-xs text-red-600">{errors.helpType}</p>}
+      </div>
+
+      <div>
+        <label htmlFor={id("message")} className="block text-sm font-medium text-navy">
+          Message
         </label>
         <textarea
-          id={id("description")}
+          id={id("message")}
           rows={5}
-          value={values.description}
-          onChange={(e) => onChange("description", e.target.value)}
+          value={values.message}
+          onChange={(e) => onChange("message", e.target.value)}
           className={`${inputClasses} resize-none`}
-          placeholder="Describe your current systems, pain points, and what you're looking to achieve..."
+          placeholder="To better assist you, please describe how we can help..."
         />
-        {errors.description && (
-          <p className="mt-1.5 text-xs text-red-600">{errors.description}</p>
-        )}
+        {errors.message && <p className="mt-1.5 text-xs text-red-600">{errors.message}</p>}
       </div>
     </>
   );

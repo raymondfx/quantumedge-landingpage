@@ -18,8 +18,8 @@ export default function ContactSuccessPanel({
         Consultation Requested
       </h3>
       <p className="mt-2 text-sm text-muted">
-        Thanks, {data.name.split(" ")[0]}. Our engineering team will reach out
-        to {data.email} shortly to schedule your technical consultation.
+        Thanks, {data.firstName}. Our engineering team will reach out to{" "}
+        {data.companyEmail} shortly to schedule your free consultation.
       </p>
 
       <dl className="mt-6 space-y-3 border-t border-border pt-5 text-sm">
@@ -28,8 +28,8 @@ export default function ContactSuccessPanel({
           <dd className="text-right text-navy">{data.company}</dd>
         </div>
         <div className="flex justify-between gap-4">
-          <dt className="text-muted">Primary Need</dt>
-          <dd className="text-right text-navy">{data.need}</dd>
+          <dt className="text-muted">How We Can Help</dt>
+          <dd className="text-right text-navy">{data.helpType}</dd>
         </div>
       </dl>
 
