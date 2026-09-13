@@ -4,6 +4,7 @@ import MissionBand from "@/components/MissionBand";
 import ValueProps from "@/components/ValueProps";
 import CloudPartners from "@/components/CloudPartners";
 import Services from "@/components/Services";
+import Industries from "@/components/Industries";
 import FlagshipSpotlight from "@/components/FlagshipSpotlight";
 import WhyQuantumedge from "@/components/WhyQuantumedge";
 import ContactForm from "@/components/ContactForm";
@@ -16,12 +17,13 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <MissionBand />
-        <CloudPartners />
         <ValueProps />
         <Services />
+        <Industries />
         <FlagshipSpotlight />
         <WhyQuantumedge />
         <ContactForm />
+        <CloudPartners />
       </main>
       <Footer />
     </>
