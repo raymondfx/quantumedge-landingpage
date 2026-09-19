@@ -8,6 +8,7 @@ import ContactSuccessPanel from "./ContactSuccessPanel";
 import {
   initialFormState,
   validateContactForm,
+  submitContactForm,
   type FormState,
   type FormErrors,
 } from "@/lib/contactForm";
@@ -31,6 +32,8 @@ export default function ContactForm() {
   const [values, setValues] = useState<FormState>(initialFormState);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState<FormState | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleChange = (field: keyof FormState, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -39,14 +42,22 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validateContactForm(values);
     setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
 
-    if (Object.keys(validationErrors).length === 0) {
+    setSubmitError(null);
+    setIsSubmitting(true);
+    const result = await submitContactForm(values);
+    setIsSubmitting(false);
+
+    if (result.success) {
       setSubmitted(values);
       setValues(initialFormState);
+    } else {
+      setSubmitError(result.message);
     }
   };
 
@@ -130,11 +141,16 @@ export default function ContactForm() {
                         onChange={handleChange}
                       />
 
+                      {submitError && (
+                        <p className="text-sm text-red-600">{submitError}</p>
+                      )}
+
                       <button
                         type="submit"
-                        className="btn-primary rounded-lg px-8 py-3"
+                        disabled={isSubmitting}
+                        className="btn-primary rounded-lg px-8 py-3 disabled:cursor-not-allowed disabled:opacity-60"
                       >
-                        Submit
+                        {isSubmitting ? "Submitting..." : "Submit"}
                       </button>
                     </form>
                   </>

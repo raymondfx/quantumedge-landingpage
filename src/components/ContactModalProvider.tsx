@@ -13,6 +13,7 @@ import { X } from "lucide-react";
 import {
   initialFormState,
   validateContactForm,
+  submitContactForm,
   type FormState,
   type FormErrors,
 } from "@/lib/contactForm";
@@ -38,6 +39,8 @@ export default function ContactModalProvider({ children }: { children: ReactNode
   const [values, setValues] = useState<FormState>(initialFormState);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState<FormState | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const openContactModal = useCallback(() => setOpen(true), []);
 
@@ -48,6 +51,7 @@ export default function ContactModalProvider({ children }: { children: ReactNode
       setValues(initialFormState);
       setErrors({});
       setSubmitted(null);
+      setSubmitError(null);
     }, 200);
   }, []);
 
@@ -74,13 +78,21 @@ export default function ContactModalProvider({ children }: { children: ReactNode
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validateContactForm(values);
     setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
 
-    if (Object.keys(validationErrors).length === 0) {
+    setSubmitError(null);
+    setIsSubmitting(true);
+    const result = await submitContactForm(values);
+    setIsSubmitting(false);
+
+    if (result.success) {
       setSubmitted(values);
+    } else {
+      setSubmitError(result.message);
     }
   };
 
@@ -129,8 +141,16 @@ export default function ContactModalProvider({ children }: { children: ReactNode
                     idPrefix="modal-"
                   />
 
-                  <button type="submit" className="btn-primary w-full rounded-lg px-6 py-3.5">
-                    Schedule Technical Consultation
+                  {submitError && (
+                    <p className="text-sm text-red-600">{submitError}</p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary w-full rounded-lg px-6 py-3.5 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {isSubmitting ? "Submitting..." : "Schedule Technical Consultation"}
                   </button>
                 </form>
               </>
