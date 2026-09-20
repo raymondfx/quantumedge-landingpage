@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useConsent } from "./ConsentProvider";
 
 const SOLUTION_LINKS = [
   { label: "Managed Services", href: "#solution-managed-services" },
@@ -16,6 +19,7 @@ const COMPANY_LINKS = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { reopenConsentBanner } = useConsent();
 
   return (
     <footer className="relative overflow-hidden bg-navy pt-16">
@@ -83,6 +87,13 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-accent-soft transition-colors">
               Terms of Service
             </Link>
+            <button
+              type="button"
+              onClick={reopenConsentBanner}
+              className="hover:text-accent-soft transition-colors"
+            >
+              Cookie Preferences
+            </button>
           </nav>
         </div>
       </div>

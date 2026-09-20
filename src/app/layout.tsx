@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
+import Script from "next/script";
 import ContactModalProvider from "@/components/ContactModalProvider";
+import ConsentProvider from "@/components/ConsentProvider";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-SFMZZGGZP5";
 
 // Headings — matches the reference theme's "Inter Tight" heading font exactly.
 const interTight = Inter_Tight({
@@ -31,7 +35,36 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${interTight.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-navy">
-        <ContactModalProvider>{children}</ContactModalProvider>
+        {/* Consent Mode v2 default: deny storage until the visitor accepts the
+            cookie banner. Must run before gtag.js loads and before any config
+            call, so this is `beforeInteractive` (Next.js always injects it
+            into <head> regardless of where it's placed in the tree). */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 500
+            });
+          `}
+        </Script>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+        <ConsentProvider>
+          <ContactModalProvider>{children}</ContactModalProvider>
+        </ConsentProvider>
       </body>
     </html>
   );
