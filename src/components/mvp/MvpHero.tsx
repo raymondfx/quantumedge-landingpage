@@ -44,8 +44,8 @@ export default function MvpHero() {
           <div className="animate-fade-in delay-200 relative">
             <div className="card-shadow relative aspect-[1504/950] overflow-hidden rounded-2xl">
               <Image
-                src="/images/hero-team.jpg"
-                alt="Quantumedge engineers reviewing a client system together"
+                src="/images/mvp-hero.jpg"
+                alt="Founder holding up a notepad reading &quot;Start Up&quot;"
                 fill
                 priority
                 sizes="(min-width: 1024px) 45vw, 90vw"

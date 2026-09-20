@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Reveal from "../Reveal";
 
 const STEPS = [
@@ -32,28 +32,36 @@ export default function MvpProcess() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 flex flex-col gap-8 sm:flex-row sm:items-start">
-          {STEPS.map((step, i) => (
-            <Reveal key={step.number} delay={i * 100} className="flex flex-1 items-start gap-4">
-              <span className="font-heading shrink-0 text-3xl font-bold text-navy">
-                {step.number}
-              </span>
-              <div className="flex-1">
-                <h3 className="font-heading text-lg font-semibold text-navy">
-                  {step.title}
-                </h3>
-                <p className="mt-1.5 text-base leading-[1.4] text-muted">
-                  {step.text}
-                </p>
-              </div>
-              {i < STEPS.length - 1 && (
-                <ChevronRight
-                  className="mt-1 hidden shrink-0 text-navy/25 sm:block"
-                  size={20}
-                />
-              )}
-            </Reveal>
-          ))}
+        <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <Reveal>
+            <div className="card-shadow relative aspect-[1504/950] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/mvp-process.jpg"
+                alt="Founder holding up a notepad reading &quot;Start Up&quot;"
+                fill
+                sizes="(min-width: 1024px) 45vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+
+          <div className="flex flex-col gap-8">
+            {STEPS.map((step, i) => (
+              <Reveal key={step.number} delay={i * 100} className="flex items-start gap-4">
+                <span className="font-heading shrink-0 text-3xl font-bold text-navy">
+                  {step.number}
+                </span>
+                <div>
+                  <h3 className="font-heading text-lg font-semibold text-navy">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1.5 text-base leading-[1.4] text-muted">
+                    {step.text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
