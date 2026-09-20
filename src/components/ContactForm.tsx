@@ -14,12 +14,12 @@ import {
 } from "@/lib/contactForm";
 
 const BENEFITS = [
-  "Client-oriented",
-  "Results-driven",
-  "Independent",
-  "Problem-solving",
-  "Competent",
-  "Transparent",
+  "Senior Engineers Only",
+  "Transparent Pricing",
+  "NDA-Protected",
+  "You Own the IP",
+  "Flexible Team Scaling",
+  "Weekly Progress Reports",
 ];
 
 const STEPS = [
@@ -67,10 +67,10 @@ export default function ContactForm() {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
           <Reveal className="max-w-xl">
             <span className="font-ui text-xs font-semibold uppercase tracking-widest text-accent-soft">
-              Project Scoping
+              Get Started
             </span>
             <h2 className="font-heading mt-3 text-4xl font-bold leading-[1.2] text-white sm:text-[3rem]">
-              Partner with Us for Comprehensive IT
+              Let&rsquo;s Scope Your Project
             </h2>
           </Reveal>
         </div>
@@ -81,8 +81,9 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal className="lg:pt-10">
               <p className="max-w-md text-base leading-[1.4] text-navy/70">
-                We&rsquo;re happy to answer any questions you may have and
-                help you determine which of our services best fit your needs.
+                Tell us about your project and team needs — we&rsquo;ll get
+                back to you within one business day with a clear scope and
+                free estimate.
               </p>
 
               <h3 className="font-heading mt-9 text-lg font-semibold text-navy">
@@ -130,7 +131,7 @@ export default function ContactForm() {
                 ) : (
                   <>
                     <h3 className="font-heading text-center text-xl font-bold text-navy">
-                      Schedule a Free Consultation
+                      Get a Free Project Estimate
                     </h3>
                     <div className="mt-5 border-t border-border" />
 
@@ -150,7 +151,7 @@ export default function ContactForm() {
                         disabled={isSubmitting}
                         className="btn-primary rounded-lg px-8 py-3 disabled:cursor-not-allowed disabled:opacity-60"
                       >
-                        {isSubmitting ? "Submitting..." : "Submit"}
+                        {isSubmitting ? "Submitting..." : "Get My Free Estimate"}
                       </button>
                     </form>
                   </>

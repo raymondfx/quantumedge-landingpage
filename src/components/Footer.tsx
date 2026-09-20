@@ -5,13 +5,14 @@ import Link from "next/link";
 import { useConsent } from "./ConsentProvider";
 
 const SOLUTION_LINKS = [
-  { label: "Managed Services", href: "#solution-managed-services" },
+  { label: "Custom Software Development", href: "#solution-custom-software" },
+  { label: "Product Engineering & MVP Development", href: "#solution-product-engineering" },
+  { label: "Cloud & DevOps Engineering", href: "#solution-cloud-devops" },
   { label: "Cyber Security", href: "#solution-cyber-security" },
-  { label: "Web Development", href: "#solution-web-development" },
-  { label: "Cloud Services", href: "#solution-cloud-services" },
 ];
 
 const COMPANY_LINKS = [
+  { label: "How We Work", href: "#engagement" },
   { label: "Flagship Solutions", href: "#flagship" },
   { label: "Methodology", href: "#why-us" },
   { label: "Contact Us", href: "#contact" },
@@ -41,8 +42,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm text-white/50">
-              Enterprise software engineering, AI automation, and cloud-native
-              solutions for East Africa&rsquo;s growing businesses.
+              Enterprise software engineering, custom product development,
+              and cloud-native solutions for ambitious businesses worldwide.
             </p>
             <p className="mt-4 text-xs text-white/40">Nairobi, Kenya</p>
           </div>

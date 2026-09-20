@@ -125,12 +125,12 @@ export default function ContactModalProvider({ children }: { children: ReactNode
             ) : (
               <>
                 <h3 className="font-heading text-2xl font-bold leading-[1.2] text-navy">
-                  Let&rsquo;s architect your next system
+                  Get a Free Project Estimate
                 </h3>
                 <p className="mt-2 text-sm leading-[1.4] text-muted">
-                  Tell us about your organization and challenge — our
-                  engineering team will follow up to scope a technical
-                  consultation.
+                  Tell us about your project — our engineering team will
+                  follow up within one business day with a clear scope and
+                  free estimate.
                 </p>
 
                 <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-6">
@@ -150,7 +150,7 @@ export default function ContactModalProvider({ children }: { children: ReactNode
                     disabled={isSubmitting}
                     className="btn-primary w-full rounded-lg px-6 py-3.5 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {isSubmitting ? "Submitting..." : "Schedule Technical Consultation"}
+                    {isSubmitting ? "Submitting..." : "Get My Free Estimate"}
                   </button>
                 </form>
               </>

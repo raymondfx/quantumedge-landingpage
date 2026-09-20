@@ -5,7 +5,7 @@ const CAPABILITIES = [
   { icon: Truck, text: "Inbound distributor LPO ingestion" },
   { icon: FileCheck2, text: "Automated order validation" },
   { icon: CheckCircle2, text: "Live delivery tracking" },
-  { icon: Receipt, text: "eTIMS tax integration" },
+  { icon: Receipt, text: "Automated tax & compliance integration" },
   { icon: RefreshCcw, text: "Automated QuickBooks/ERP syncing" },
 ];
 

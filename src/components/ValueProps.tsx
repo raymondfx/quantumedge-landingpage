@@ -1,30 +1,30 @@
-import { CircleDollarSign, Lightbulb, BookOpenText, Boxes } from "lucide-react";
+import { CircleDollarSign, Users, MessageCircle, Boxes } from "lucide-react";
 import Reveal from "./Reveal";
 
 const VALUES = [
   {
     icon: CircleDollarSign,
-    title: "Cost-effectiveness",
+    title: "Outsourcing Economics",
     description:
-      "We offer affordable IT solutions that help you reduce costs and improve your bottom line.",
+      "Senior engineering talent at a fraction of onshore rates — without cutting corners on quality or code ownership.",
   },
   {
-    icon: Lightbulb,
-    title: "Innovative Technology",
+    icon: Users,
+    title: "Vetted Senior Engineers",
     description:
-      "We stay up-to-date with the latest technology trends and offer innovative solutions that help you stay ahead of the competition.",
+      "Every engineer is senior-level and rigorously vetted — no juniors learning on your dime.",
   },
   {
-    icon: BookOpenText,
-    title: "Industry Expertise",
+    icon: MessageCircle,
+    title: "Real-Time Collaboration",
     description:
-      "We specialize in serving specific industries, such as healthcare, finance, or manufacturing, and offer tailored solutions that meet your unique needs.",
+      "Daily standups, shared tooling, and overlapping working hours — outsourced doesn't mean out of reach.",
   },
   {
     icon: Boxes,
-    title: "Scalability",
+    title: "Flexible Engagement",
     description:
-      "Our solutions are scalable and can grow with your business, ensuring that you get the most value out of your investment.",
+      "Scale your team up or down as scope changes, with no long-term lock-in.",
   },
 ];
 

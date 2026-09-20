@@ -1,20 +1,34 @@
-import { Puzzle, Handshake, ShieldCheck, Code2, Smartphone, Cloud } from "lucide-react";
+import { Code2, Rocket, Sparkles, Cloud, ShieldCheck, Handshake } from "lucide-react";
 import Reveal from "./Reveal";
 
 export const SOLUTIONS = [
   {
-    id: "solution-managed-services",
-    icon: Puzzle,
-    title: "Managed Services",
+    id: "solution-custom-software",
+    icon: Code2,
+    title: "Custom Software Development",
     description:
-      "Free up your internal resources to focus on the business by letting us handle day to day support services, management, and monitoring of your IT.",
+      "Web, mobile, and backend systems built from scratch by senior engineers — architected to scale with your business.",
   },
   {
-    id: "solution-it-consulting",
-    icon: Handshake,
-    title: "IT Consulting & Advisory",
+    id: "solution-product-engineering",
+    icon: Rocket,
+    title: "Product Engineering & MVP Development",
     description:
-      "The right technology, implemented properly, appropriately managed and monitored, can lead to significant gains in growth",
+      "From requirements to a working product — we design, build, and ship MVPs and full-scale platforms end-to-end.",
+  },
+  {
+    id: "solution-ai-automation",
+    icon: Sparkles,
+    title: "Enterprise AI & Workflow Automation",
+    description:
+      "From purchase-order processing to AI-assisted operations — we automate the manual work that slows your business down.",
+  },
+  {
+    id: "solution-cloud-devops",
+    icon: Cloud,
+    title: "Cloud & DevOps Engineering",
+    description:
+      "Cloud architecture, CI/CD, and infrastructure that keeps your systems fast, secure, and always available.",
   },
   {
     id: "solution-cyber-security",
@@ -24,25 +38,11 @@ export const SOLUTIONS = [
       "Our experts can identify vulnerabilities, assess risks, and implement robust security measures to safeguard your systems and data.",
   },
   {
-    id: "solution-web-development",
-    icon: Code2,
-    title: "Web Development",
+    id: "solution-managed-support",
+    icon: Handshake,
+    title: "Managed Support & Maintenance",
     description:
-      "Our web development services can help you establish an impactful online presence and reach your target audience effectively.",
-  },
-  {
-    id: "solution-mobile-development",
-    icon: Smartphone,
-    title: "Mobile Development",
-    description:
-      "We can help you create a customized mobile app that aligns with your brand and goals, with expertise in various mobile platforms.",
-  },
-  {
-    id: "solution-cloud-services",
-    icon: Cloud,
-    title: "Cloud Services",
-    description:
-      "With our expertise in cloud technologies, we can help you find the right cloud solutions that meet your business needs and goals.",
+      "Ongoing monitoring, updates, and support after launch — so your software keeps running long after we ship it.",
   },
 ];
 
@@ -52,10 +52,10 @@ export default function Services() {
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <Reveal>
           <span className="font-ui inline-block rounded-md border border-border bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-muted">
-            How We Do
+            How We Help
           </span>
           <h2 className="font-heading mt-4 text-4xl font-bold leading-[1.2] text-navy sm:text-[3rem]">
-            Solutions
+            Software Development & IT Outsourcing Services
           </h2>
         </Reveal>
 

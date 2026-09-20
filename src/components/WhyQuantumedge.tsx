@@ -35,9 +35,9 @@ const PILLARS = [
   },
   {
     icon: Globe2,
-    title: "Regional Compliance",
+    title: "Global Delivery, Nairobi Engineering Hub",
     description:
-      "Native alignment with East African tax, banking, and financial-reporting regulatory frameworks.",
+      "Senior engineering talent at outsourcing-friendly rates, with real-time overlap across US, European, and Middle East business hours.",
   },
 ];
 

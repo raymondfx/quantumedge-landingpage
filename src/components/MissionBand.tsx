@@ -9,11 +9,11 @@ export default function MissionBand() {
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-navy px-8 py-14 sm:px-14 sm:py-16">
             <span className="inline-block rounded-md bg-white/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white/70">
-              What We Do
+              Why Outsource To Us
             </span>
 
             <h2 className="font-heading mt-8 max-w-lg text-4xl font-bold leading-[1.2] text-accent-soft sm:text-[3rem]">
-              Simplifying enterprise complexity for a connected world.
+              Enterprise-grade software delivery, wherever your business is.
             </h2>
 
             {/* Triangular dot cluster, echoing the reference layout */}

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Star } from "lucide-react";
+import { useContactModal } from "./ContactModalProvider";
 
 const METRICS = [
   { value: "10", unit: "Years", label: "Proven Track Record" },
@@ -21,7 +24,7 @@ function ReviewBadge() {
           ))}
         </div>
         <div className="font-ui mt-1 text-sm font-semibold text-navy">
-          Enterprise clients
+          Global clients
         </div>
       </div>
     </div>
@@ -49,39 +52,47 @@ function Metric({ metric }: { metric: (typeof METRICS)[number] }) {
 }
 
 export default function Hero() {
+  const { openContactModal } = useContactModal();
+
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-0 lg:pt-32">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-12">
           {/* Left: copy */}
           <div>
-            <h1 className="font-heading animate-fade-in-up text-[2.5rem] font-semibold leading-[1] tracking-[-1px] text-navy sm:text-[3.25rem] lg:text-[4rem]">
-              We manage your IT,
+            <span className="animate-fade-in font-ui inline-block rounded-md bg-accent-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent">
+              Software Development Outsourcing
+            </span>
+
+            <h1 className="font-heading animate-fade-in-up mt-5 text-[2rem] font-semibold leading-[1.05] tracking-[-1px] text-navy sm:text-[2.5rem] lg:text-[3rem]">
+              Outsource Your Software
               <br />
-              so you can manage
+              Development — Without
               <br />
-              your business.
+              Compromising Quality.
             </h1>
 
             <p className="animate-fade-in-up delay-200 mt-7 max-w-lg text-xl leading-[1.4] text-[#242627]">
-              Take charge of your business continuity with innovative IT
-              solutions
+              QuantumEdge designs, builds, and ships custom software from
+              your requirements — delivered by senior engineers, at a
+              fraction of onshore cost, with the communication and
+              reliability of an in-house team.
             </p>
 
             <div className="animate-fade-in-up delay-300 mt-9 flex flex-col gap-4 sm:flex-row">
+              <button
+                onClick={openContactModal}
+                className="btn-primary inline-flex items-center justify-center rounded-md px-6 py-3.5"
+              >
+                Get a Free Quote
+              </button>
               <a
                 href="https://calendly.com/raykip512/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center justify-center rounded-md px-6 py-3.5"
-              >
-                Schedule a Free Consultation
-              </a>
-              <a
-                href="#services"
                 className="btn-secondary inline-flex items-center justify-center rounded-md px-6 py-3.5"
               >
-                Services
+                Book a Call
               </a>
             </div>
           </div>

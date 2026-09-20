@@ -23,7 +23,7 @@ export default function Industries() {
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <Reveal>
           <span className="font-ui inline-block rounded-md border border-border bg-surface px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-muted">
-            What We Do
+            Who We Serve
           </span>
           <h2 className="font-heading mt-4 max-w-2xl text-4xl font-bold leading-[1.2] text-navy sm:text-[3rem]">
             Solving IT challenges in every industry, every day.

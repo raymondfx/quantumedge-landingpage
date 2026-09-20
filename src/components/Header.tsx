@@ -6,15 +6,16 @@ import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { useContactModal } from "./ContactModalProvider";
 
 const SERVICE_LINKS = [
-  { label: "Managed Services", href: "#solution-managed-services" },
-  { label: "IT Consulting & Advisory", href: "#solution-it-consulting" },
+  { label: "Custom Software Development", href: "#solution-custom-software" },
+  { label: "Product Engineering & MVP Development", href: "#solution-product-engineering" },
+  { label: "Enterprise AI & Workflow Automation", href: "#solution-ai-automation" },
+  { label: "Cloud & DevOps Engineering", href: "#solution-cloud-devops" },
   { label: "Cyber Security", href: "#solution-cyber-security" },
-  { label: "Web Development", href: "#solution-web-development" },
-  { label: "Mobile Development", href: "#solution-mobile-development" },
-  { label: "Cloud Services", href: "#solution-cloud-services" },
+  { label: "Managed Support & Maintenance", href: "#solution-managed-support" },
 ];
 
 const NAV_LINKS = [
+  { label: "How We Work", href: "#engagement" },
   { label: "Flagship Solutions", href: "#flagship" },
   { label: "Methodology", href: "#why-us" },
 ];
@@ -118,7 +119,7 @@ export default function Header() {
                 onClick={openContactModal}
                 className="btn-primary inline-flex items-center rounded-md px-5 py-2.5"
               >
-                Contact Us
+                Get a Free Quote
               </button>
             </div>
 
@@ -185,7 +186,7 @@ export default function Header() {
             }}
             className="btn-primary mt-6 inline-flex items-center justify-center rounded-md px-5 py-3.5"
           >
-            Contact Us
+            Get a Free Quote
           </button>
         </nav>
       </div>

@@ -4,6 +4,7 @@ import MissionBand from "@/components/MissionBand";
 import ValueProps from "@/components/ValueProps";
 import CloudPartners from "@/components/CloudPartners";
 import Services from "@/components/Services";
+import EngagementModels from "@/components/EngagementModels";
 import Industries from "@/components/Industries";
 import FlagshipSpotlight from "@/components/FlagshipSpotlight";
 import WhyQuantumedge from "@/components/WhyQuantumedge";
@@ -19,6 +20,7 @@ export default function Home() {
         <MissionBand />
         <ValueProps />
         <Services />
+        <EngagementModels />
         <Industries />
         <FlagshipSpotlight />
         <WhyQuantumedge />

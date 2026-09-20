@@ -1,8 +1,8 @@
 export const HELP_OPTIONS = [
-  "Custom Enterprise Software",
-  "LPO / Procurement Automation",
-  "Enterprise AI Workflow",
-  "Cloud & Systems Integration",
+  "Custom Software Development",
+  "Product Engineering & MVP Development",
+  "Enterprise AI & Workflow Automation",
+  "Cloud & DevOps Engineering",
   "Other",
 ];
 
@@ -55,6 +55,10 @@ export async function submitContactForm(
     });
 
     const result = (await response.json()) as { success: boolean; message?: string };
+
+    if (result.success && typeof window.gtag === "function") {
+      window.gtag("event", "generate_lead", { value: 1, currency: "USD" });
+    }
 
     return {
       success: Boolean(result.success),

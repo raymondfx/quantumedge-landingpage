@@ -23,9 +23,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Quantumedge Technologies Limited | Enterprise Software & AI Engineering",
+  title: "Outsource Software Development & IT Services | QuantumEdge Technologies",
   description:
-    "Nairobi-based enterprise software and IT consultancy specializing in B2B business automation, enterprise AI integrations, and custom software systems for East Africa's growing enterprises.",
+    "QuantumEdge Technologies is a global software development outsourcing partner — dedicated engineering teams, custom software, and enterprise AI automation, delivered from our Nairobi hub at outsourcing-friendly rates.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
