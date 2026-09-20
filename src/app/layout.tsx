@@ -25,7 +25,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Outsource Software Development & IT Services | QuantumEdge Technologies",
   description:
-    "QuantumEdge Technologies is a global software development outsourcing partner — dedicated engineering teams, custom software, and enterprise AI automation, delivered from our Nairobi hub at outsourcing-friendly rates.",
+    "QuantumEdge Technologies is a global software development outsourcing partner — custom software, product engineering, and enterprise AI automation, delivered from our Nairobi hub at outsourcing-friendly rates.",
+  keywords: [
+    "software development outsourcing",
+    "outsource software development",
+    "custom software development company",
+    "offshore software development",
+    "IT outsourcing company",
+    "product engineering and MVP development",
+    "enterprise AI automation",
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

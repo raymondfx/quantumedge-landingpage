@@ -60,11 +60,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-12">
           {/* Left: copy */}
           <div>
-            <span className="animate-fade-in font-ui inline-block rounded-md bg-accent-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent">
-              Software Development Outsourcing
-            </span>
-
-            <h1 className="font-heading animate-fade-in-up mt-5 text-[2rem] font-semibold leading-[1.05] tracking-[-1px] text-navy sm:text-[2.5rem] lg:text-[3rem]">
+            <h1 className="font-heading animate-fade-in-up text-[2rem] font-semibold leading-[1.05] tracking-[-1px] text-navy sm:text-[2.5rem] lg:text-[3rem]">
               Outsource Your Software
               <br />
               Development — Without
