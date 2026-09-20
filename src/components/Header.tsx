@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { label: "How We Work", href: "#engagement" },
   { label: "Flagship Solutions", href: "#flagship" },
   { label: "Methodology", href: "#why-us" },
+  { label: "For Startups", href: "/mvp" },
 ];
 
 export default function Header() {

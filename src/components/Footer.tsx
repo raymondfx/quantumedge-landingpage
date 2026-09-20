@@ -13,6 +13,7 @@ const SOLUTION_LINKS = [
 
 const COMPANY_LINKS = [
   { label: "How We Work", href: "#engagement" },
+  { label: "For Startups", href: "/mvp" },
   { label: "Flagship Solutions", href: "#flagship" },
   { label: "Methodology", href: "#why-us" },
   { label: "Contact Us", href: "#contact" },
