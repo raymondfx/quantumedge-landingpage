@@ -31,6 +31,9 @@ export default function MvpFooter() {
             <Link href="/terms" className="hover:text-accent-soft transition-colors">
               Terms of Service
             </Link>
+            <a href="/sitemap.xml" className="hover:text-accent-soft transition-colors">
+              Sitemap
+            </a>
             <button
               type="button"
               onClick={reopenConsentBanner}
