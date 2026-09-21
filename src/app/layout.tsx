@@ -7,6 +7,27 @@ import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-SFMZZGGZP5";
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Quantumedge Technologies Limited",
+  alternateName: "QuantumEdge Technologies",
+  url: "https://quantumedge.co.ke",
+  logo: "https://quantumedge.co.ke/logo/icon.svg",
+  description:
+    "Global software development outsourcing partner — custom software, product engineering, and enterprise AI automation, delivered from a Nairobi engineering hub.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nairobi",
+    addressCountry: "KE",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+254-726-084-248",
+    contactType: "customer service",
+  },
+};
+
 // Headings — matches the reference theme's "Inter Tight" heading font exactly.
 const interTight = Inter_Tight({
   variable: "--font-heading",
@@ -44,6 +65,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${interTight.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-navy">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {/* Consent Mode v2 default: deny storage until the visitor accepts the
             cookie banner. Must run before gtag.js loads and before any config
             call, so this is `beforeInteractive` (Next.js always injects it
