@@ -65,6 +65,11 @@ export async function submitContactForm(
         currency: "USD",
         form_location: formLocation,
       });
+      window.gtag("event", "conversion", {
+        send_to: "AW-18463618168/c4dQCN29soUdEPjokeRE",
+        value: 1.0,
+        currency: "USD",
+      });
     }
 
     return {
