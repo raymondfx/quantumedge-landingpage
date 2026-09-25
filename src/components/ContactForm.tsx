@@ -50,7 +50,7 @@ export default function ContactForm() {
 
     setSubmitError(null);
     setIsSubmitting(true);
-    const result = await submitContactForm(values);
+    const result = await submitContactForm(values, "inline_section");
     setIsSubmitting(false);
 
     if (result.success) {

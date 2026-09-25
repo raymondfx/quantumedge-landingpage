@@ -86,7 +86,7 @@ export default function ContactModalProvider({ children }: { children: ReactNode
 
     setSubmitError(null);
     setIsSubmitting(true);
-    const result = await submitContactForm(values);
+    const result = await submitContactForm(values, "modal");
     setIsSubmitting(false);
 
     if (result.success) {

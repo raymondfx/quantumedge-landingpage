@@ -31,8 +31,11 @@ export const initialFormState: FormState = {
 const WEB3FORMS_ACCESS_KEY = "04d67085-d7df-4c39-8f02-9b9cdb20d7d0";
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
+export type FormLocation = "modal" | "inline_section";
+
 export async function submitContactForm(
-  values: FormState
+  values: FormState,
+  formLocation: FormLocation
 ): Promise<{ success: boolean; message: string }> {
   const formData = new FormData();
   formData.append("access_key", WEB3FORMS_ACCESS_KEY);
@@ -57,7 +60,11 @@ export async function submitContactForm(
     const result = (await response.json()) as { success: boolean; message?: string };
 
     if (result.success && typeof window.gtag === "function") {
-      window.gtag("event", "generate_lead", { value: 1, currency: "USD" });
+      window.gtag("event", "generate_lead", {
+        value: 1,
+        currency: "USD",
+        form_location: formLocation,
+      });
     }
 
     return {

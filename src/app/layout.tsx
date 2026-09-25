@@ -6,6 +6,7 @@ import ConsentProvider from "@/components/ConsentProvider";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-SFMZZGGZP5";
+const GOOGLE_ADS_ID = "AW-18463618168";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -96,6 +97,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {`
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GOOGLE_ADS_ID}');
           `}
         </Script>
         <ConsentProvider>
